@@ -48,3 +48,16 @@ let authors = [
         lastName: 'Libsig'
     }
 ];
+
+document.addEventListener('DOMContentLoaded', ()=>{
+    const ul = document.querySelector('main ul');
+    for (const author of authors) {
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        img.setAttribute('src', `img/tile_${author.firstName.toLowerCase()}_${author.lastName.toLowerCase()}.jpg`);
+        const p = document.createElement('p');
+        p.textContent = `${author.firstName} ${author.lastName}`;
+        li.append(img, p);
+        ul.appendChild(li);
+    }
+}); 
